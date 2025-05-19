@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RD National College of Arts and Science, Erode</title>
+
+  <style>
+
+    
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      background-image: url('https://content.jdmagicbox.com/v2/comp/erode/b1/9999px424.x424.181220180507.j6b1/catalogue/rd-national-college-of-arts-and-science-college-elumathur-erode-colleges-2yf92ivjrs.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: rgb(255, 255, 255);
+    }
+
+    
+        /* Header */
+        header {
+            background-color: #060080;
+            color: white;
+            padding: 4px 8px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        /* Logo + Name */
+        header .left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    
+        header .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    
+        header .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    
+        header h1 {
+            font-size: 28px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.2;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        /* Slideshow */
+        .slider {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+    
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+    
+        .slides img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            flex: 0 0 100vw;
+        }
+    
+    
+        /* Nav */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+    
+        nav ul li {
+            position: relative;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+    
+        nav ul li:hover > ul {
+            display: block;
+        }
+    
+        /* Dropdown Menus */
+        nav ul ul {
+            display: none;
+            position: absolute;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://www.transparenttextures.com/patterns/black-linen.png');
+            background-size: cover;
+            top: 100%;
+            left: 0;
+            min-width: 180px;
+            z-index: 999;
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+        }
+    
+        nav ul ul ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://www.transparenttextures.com/patterns/black-linen.png');
+            background-size: cover;
+            white-space: nowrap;
+            z-index: 999;
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+        }
+    
+        nav li:nth-child(3) ul li:first-child ul {
+            left: auto;
+            right: 100%;
+        }
+    
+        nav ul ul li:hover > ul {
+            display: block;
+        }
+    
+        nav ul ul li a {
+            padding: 10px;
+            color: white;
+        }
+    
+/* Mobile View - Mobile-first Styles */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  height: 60px;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.side-menu ul li {
+  padding: 15px 20px;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Mobile view menu toggle */
+#menuToggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #003366;
+    position: absolute;
+    top: 60px; /* just below header */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    border-bottom: 1px solid #555;
+    text-align: left;
+  }
+
+  nav ul li a {
+    padding: 12px;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 8px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  header h1 {
+    font-size: 18px;
+    white-space: normal; /* Allow wrapping */
+    margin-top: 5px;
+    line-height: 1.2;
+  }
+
+
+
+  nav ul {
+    display: none; /* Initially hide the menu */
+    flex-direction: column;  /* Vertical layout for the mobile menu */
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  /* Burger menu button */
+  #menuToggle {
+  display: none; /* Default: hide */
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+
+/* Show toggle only in mobile view */
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    background-color: #003366;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex; /* Show only when toggled */
+  }
+}
+
+}
+
+/* For small mobile screens */
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 16px;  /* Adjust the font size for smaller devices */
+  }
+}
+        /* Mobile Responsive Menu */
+        @media(max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background-color: #800000; /* Maroon */
+                width: 100%;
+                display: none; /* Initially hidden */
+            }
+    
+            nav ul.show {
+                display: flex; /* Show when toggled */
+            }
+    
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+          }
+    
+        /* Glow Animation */
+        .glow {
+            animation: glowEffect 1.5s ease-in-out;
+            box-shadow: 0 0 20px 8px #ffd700;
+            border-radius: 12px;
+        }
+    
+        @keyframes glowEffect {
+            0% { box-shadow: 0 0 0 rgba(255, 215, 0, 0); }
+            50% { box-shadow: 0 0 20px 8px rgba(255, 215, 0, 0.8); }
+            100% { box-shadow: 0 0 0 rgba(255, 215, 0, 0); }
+        }
+    
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.3) url('https://via.placeholder.com/1500x500?text=Background+Image') no-repeat center center;
+            background-size: cover;
+        }
+    
+        section h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+    
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    
+        /* Admission Form */
+        #admission-form {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 1001;
+            width: 300px;
+        }
+    
+        #admission-form input, #admission-form select, #admission-form button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+    
+        /* Mobile logo box */
+        @media(max-width: 600px) {
+            .logo-box {
+                width: 180px;
+                height: 220px;
+            }
+    
+            .logo-box img {
+                width: 100px;
+                height: 100px;
+            }
+    
+            .logo-box .college-info h3 {
+                font-size: 14px;
+            }
+    
+            .logo-box .college-info p {
+                font-size: 10px;
+            }
+        }
+    
+    
+
+
+
+
+
+    .leader-section {
+      display: flex;
+      align-items: center;
+      margin: 40px 0;
+      padding: 0 20px;
+    }
+
+    .leader-section img {
+  width: 250px;
+  border-radius: 10px;
+  margin-right: 30px;
+  animation: lightBounce 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+    .leader-section.right img {
+      order: 2;
+      margin-left: 30px;
+      margin-right: 0;
+    }
+
+    .leader-section p {
+      flex: 1;
+      font-size: 18px;
+    }
+
+    .cta-box {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 40px 20px;
+    }
+    @keyframes lightBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+
+    /* Mobile Responsive */
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+      }
+
+      .left {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 18px;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 26px;
+        margin: 8px 0;
+        color: white;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #083a84;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        padding: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      nav ul li ul {
+        position: static;
+        background: #0b4a9f;
+      }
+
+      nav ul li.open > ul {
+        display: block;
+      }
+
+      .leader-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .leader-section img {
+        margin: 0 0 15px;
+        width: 90%;
+        max-width: 250px;
+      }
+
+      .leader-section.right img {
+        order: 0;
+        margin: 0 0 15px;
+      }
+
+      .leader-section p {
+        font-size: 16px;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .cta-box {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+  <header>
+    <div class="left">
+      <a href="#" class="logo" onclick="toggleAdmissionForm()">
+        <img src="https://www.rdcollege.in/images/logo.png" alt="College Logo" />
+      </a>
+      <h1>RD National College of Arts and Science</h1>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li>
+          <a href="#"><i class="fas fa-info-circle"></i> About Us &#9662;</a>
+          <ul>
+            <li><a href="overview.html"><i class="fas fa-eye"></i> Overview</a></li>
+            <li><a href="leadership.html"><i class="fas fa-users-cog"></i> Leadership</a></li>
+            <li><a href="principal.html"><i class="fas fa-user-tie"></i> Principal</a></li>
+            <li><a href="academic-director.html"><i class="fas fa-chalkboard-teacher"></i> Academic Director</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-graduation-cap"></i> Academics &#9662;</a>
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-book-open"></i> UG Programmes &#9656;</a>
+              <ul>
+                <li><a href="school-commerce.html"><i class="fas fa-chart-line"></i> School Of Commerce</a></li>
+                <li><a href="school-computerscience.html"><i class="fas fa-desktop"></i> School Of Computer Science</a></li>
+                <li><a href="school-management.html"><i class="fas fa-briefcase"></i> School Of Management</a></li>
+              </ul>
+            </li>
+            <li><a href="pg.html"><i class="fas fa-university"></i> PG Programmes</a></li>
+            <li><a href="research-programmes.html"><i class="fas fa-flask"></i> Research Programmes</a></li>
+          </ul>
+        </li>
+        <li><a href="faculty-details.html"><i class="fas fa-chalkboard-teacher"></i> Faculty Details</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+  <button id="menuToggle">☰</button>
+
+  </header>
+
+  <h1 style="text-align:center; padding:20px 0;">Leadership</h1>
+
+  <div class="leader-section">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbOAVCDTO9U70Up_Wm2iVr_oWErjUxbLdMxg&s" alt="Chairman Sir">
+    <p><strong>Chairman Sir</strong> has led RD National College from the front with visionary leadership and a deep commitment to educational excellence.</p>
+  </div>
+
+  <div class="leader-section right">
+    <img src="https://via.placeholder.com/250x250?text=Keerthana+Mam" alt="Keerthana Mam">
+    <p><strong>Keerthana Mam</strong> is the driving force behind student affairs and administration. A dynamic and empathetic leader.</p>
+  </div>
+
+  <div class="leader-section">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbOAVCDTO9U70Up_Wm2iVr_oWErjUxbLdMxg&s" alt="Sendhil Sir">
+    <p><strong>Sendhil Sir</strong> continues to guide the college towards excellence and innovation with unmatched leadership.</p>
+  </div>
+
+  <div class="leader-section right">
+    <img src="https://via.placeholder.com/250x250?text=Radha+Mam" alt="Radha Mam">
+    <p><strong>Radha Mam</strong> organizes initiatives and community programs that uplift the student body and enhance learning.</p>
+  </div>
+
+  <div class="cta-box">
+    <h2>Ready To Get Started?</h2>
+    <p>Call us now: <strong>+91-9876543210</strong></p>
+  </div>
+
+  <p>
+    RD National College of Arts and Science, Erode is committed to academic excellence and holistic development. Our dedicated faculty, modern infrastructure, and student-centric approach shape future leaders.
+  </p>
+
+  <div id="overlay" onclick="toggleAdmissionForm()"></div>
+  <div id="admission-form">
+    <h2>Admission Form</h2>
+    <form>
+      <input type="text" placeholder="Name" required />
+      <input type="text" placeholder="Mobile" required />
+      <input type="email" placeholder="E-mail" required />
+      <select>
+        <option value="undergraduate">Under Graduate Program</option>
+        <option value="postgraduate">Post Graduate Program</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", function () {
+      menu.classList.toggle("show");
+    });
+  });
+
+
+    function toggleAdmissionForm() {
+      const form = document.getElementById('admission-form');
+      const overlay = document.getElementById('overlay');
+      const isOpen = form.style.display === 'block';
+      form.style.display = isOpen ? 'none' : 'block';
+      overlay.style.display = isOpen ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
